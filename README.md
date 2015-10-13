@@ -12,12 +12,14 @@ Ruby 2.1.1p76
 
 # Running the Test suite:
 ```
-  Not implemented
+  bundle exec rspec
 ```
 
 # Running the Development Server
 ```
   bundle exec rails s
+  # OR
+  bundle exec guard
 ```
 
 # Deployment

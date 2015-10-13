@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thin'
+gem 'rails-uikit-sass', github: 'RadialDevGroup/rails-uikit-sass'
 
 group :development do
   gem 'better_errors'
