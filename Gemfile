@@ -26,9 +26,20 @@ gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-rails', require: false
+  gem 'guard-bundler', require: false
 end
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+
+end
+
+group :test do
+  gem 'capybara'
 end
 
