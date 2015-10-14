@@ -2,7 +2,7 @@
 
 1. Pick a story from Sprint.ly and start it.
 
-2. Create a local branch in your development environment to work on the story. 
+2. Create a local branch in your development environment to work on the story.
 
 Example:
 
@@ -17,7 +17,7 @@ $ git checkout 125-deleting
 
 4. Implement the feature.
 
-5.Run all the tests.
+5. Run all the tests.
 
 6. Commit branch to Github.
 
@@ -34,11 +34,11 @@ git push origin 125-deleting
 8. Contact a peer to review code.
 
 > To: Ben West <ben@radialdevgroup.com>
-> 
+>
 > Subject: Pull Request
-> 
+>
 > Hey Ben,
-> 
+>
 > Could you please review the PR for my branch (125-deleting); it's number #2
 >
 > Thanks,
@@ -54,5 +54,3 @@ git push origin 125-deleting
 > Github Comment:
 >
 >@mrgenixus thanks. I have made all the necessary changes, could you please merge this.
-
-
