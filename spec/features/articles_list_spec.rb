@@ -8,10 +8,20 @@ describe "Listing articles" do
     expect(page).to have_content "Articles List"
   end
 
-  scenario "view the article that was just created" do
+  scenario "see existing articles" do
     visit articles_path
     expect(page).to have_content article.title
-    expect(page).to have_content body.split(' ').first(100).join(' ')+'...'
+    expect(page).to have_content article.text.split(' ').first(100).join(' ')+'...'
+    save_and_open_page
+  end
+
+  scenario "view full article" do
+    visit articles_path
+    expect(page).to have_link "more"
+    click_link'more'
+    visit article_path(article.id)
+    expect(page).to have_content article.title
+    expect(page).to have_content article.text
     save_and_open_page
   end
 end
