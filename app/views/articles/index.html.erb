@@ -1,18 +1,13 @@
-<h1>Articles List</h1>
+<h1> Articles List </h1>
 
-<article>
-  <h2>Title</h2>
-  <% @articles.each do |article| %>
-    <%= article.title %>
-  <% end %>
-  <h2>Text<h2</>
-
-<p>
-    <% @articles.each do |article| %>
-      <%= article.text.split(' ').first(100).join(' ')+'...' %>
+<% @articles.each do |article| %>
+  <article>
+    <p>
+      <h2>Title</h2>
+      <%= article.title %>
+      <h2> Text </h2>
+      <%= article.text.split(' ').first(100).join(' ')+'...'%>
       <%= link_to 'more', article_path(article.id) %>
-    <% end %>
-
-
-</p>
-<article>
+  <article>
+<% end %>
+    </p>
