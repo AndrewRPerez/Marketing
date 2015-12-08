@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
-  def show
-    @article = Article.find(params[:id])
+  def index
+    @articles = Article.all
   end
 
-  def new
+  def show
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -16,8 +17,6 @@ class ArticlesController < ApplicationController
       render 'new'
    end
  end
-
-  def index; end
 
   private
   def article_params
