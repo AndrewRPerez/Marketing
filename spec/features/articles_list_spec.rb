@@ -11,14 +11,15 @@ describe "Listing articles" do
     visit articles_path
     expect(page).to have_content articles.first.title
     expect(page).to have_content articles.first.text.split(' ').first(100).join(' ')+'...'
-    save_and_open_page
   end
 
   scenario "view full article" do
     visit articles_path
-    expect(page).to have_link 'more'
-    click_link 'more'
-    expect(page).to have_content article.title
-    expect(page).to have_content article.text
+    within "article", text: articles.first.title do
+      expect(page).to have_link 'more'
+      click_link('more', match: :first)
+    end
+    expect(page).to have_content articles.first.title
+    expect(page).to have_content articles.first.text
   end
 end
