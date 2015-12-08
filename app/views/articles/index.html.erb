@@ -7,5 +7,6 @@
     <h2> Text </h2>
     <%= article.text.split(' ').first(100).join(' ')+'...'%>
     <%= link_to 'more', article_path(article.id) %>
+    <%= link_to 'delete' %>
   <article>
 <% end %>
