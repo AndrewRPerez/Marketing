@@ -6,10 +6,9 @@ br
 .uk-grid(data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin)
   - @articles.each do |article|
     article.card
-      .uk-panel.uk-panel-hover.uk-panel-box
-        .uk-panel-header 
+      .uk-panel.uk-panel-box
+        .uk-panel-header
           .uk-panel-title= link_to article.title, blog_path(article), target: :_blank
-        = article.text.split(' ').first(100).join(' ')+'...'
+        = article.text.first(100)+'...'
         =< link_to '', edit_article_path(article.id), class: 'edit', title: 'Edit'
-        
-        =< link_to '', article_path(article), method: :delete, class: 'delete', title: 'Delete'
+        =< link_to '', article_path(article), method: :delete, class: 'delete', title: 'Delete', :data => {:confirm => 'Are you sure?'}
