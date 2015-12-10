@@ -22,7 +22,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path, success: 'Article successfully deleted'
-    # redirect? when? under what circumstances? can the deletion fail? what then? are you delting anything now?
   end
 
   private
