@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ffaker'
 gem 'thin'
 gem 'rails-uikit-sass', github: 'RadialDevGroup/rails-uikit-sass'
+gem 'slim-rails'
 
 group :development do
   gem 'better_errors'

@@ -14,3 +14,23 @@
  */
 
 @import 'rails-uikit-sass';
+
+body {
+  min-height: 100vh;
+  color: #100800;
+}
+header {
+  .page-title {
+    font-size: 72pt;
+    line-height: 84px;
+    font-variant: small-caps;
+    vertical-align: top;
+  }
+}
+
+.container {
+  background-color: #fffcfa;
+  @extend .uk-container;
+  @extend .uk-container-center;
+  min-height: 100vh;
+}
