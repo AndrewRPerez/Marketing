@@ -1,0 +1,11 @@
+hr
+li
+  article.uk-comment
+    header.uk-comment-header
+      h4.uk-comment-title= comment.subject
+      ul.uk-comment-meta.uk-subnav.uk-subnav-line
+        li= comment.name
+        li= link_to 'reply', url_for
+      
+    .uk-comment-body= comment.text  
+  

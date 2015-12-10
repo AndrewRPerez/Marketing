@@ -1,4 +1,39 @@
-<h1><%= @article.title %></h1>
+<h1><%= @article.title.titleize %></h1>
+<ul class="uk-breadcrumb">
+    <li><%= link_to "Home", root_path %></li>
+    <li class="uk-active"><%= @article.title.titleize %></li>
+</ul>
 <p class="article-text article-full">
   <%= @article.text %>
 </p>
+
+<h3>Comments</h3>
+<ul class="uk-comment-list">
+  <%= render @article.comments %>
+</ul>
+<hr>
+
+<%= form_for [@article, @comment || Comment.new], html: { class: 'uk-form uk-form-horizontal' } do |f| %>
+  <div class="form-row">
+    <%= f.label :name, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <%= f.label :subject, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :subject, placeholder: "Nominative" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <%= f.label :text, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_area :text, placeholder: "Text", rows: 4 %>
+    </div>
+  </div>
+
+  <%= f.submit "Comment", class: 'uk-button uk-button-primary' %>
+<% end %>
