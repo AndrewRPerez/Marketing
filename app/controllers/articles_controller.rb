@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
-  
+
   def index
     @articles = Article.all
   end
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new article_params
 
     if @article.save
-      redirect_to @article, success: "Article successfully created"
+      redirect_to articles_path, success: "Article successfully created"
     else
       flash[:error] = @article.errors.full_messages.to_sentence
       render 'new'

@@ -3,7 +3,7 @@ h1 Articles List
 = link_to "Create an Article", new_article_path, class: 'add uk-button uk-float-right'
 hr
 br
-.uk-grid
+.uk-grid(data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin)
   - @articles.each do |article|
     article.card
       .uk-panel.uk-panel-hover.uk-panel-box
