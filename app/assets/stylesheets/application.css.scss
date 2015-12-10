@@ -19,6 +19,21 @@ body {
   min-height: 100vh;
   color: #100800;
 }
+
+.uk-icon-mixin {
+  font-family: FontAwesome;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &, &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
 header {
   .page-title {
     font-size: 72pt;
@@ -33,4 +48,37 @@ header {
   @extend .uk-container;
   @extend .uk-container-center;
   min-height: 100vh;
+}
+
+.article-text {
+  text-indent: 4em;
+}
+
+article.card {
+  box-sizing: border-box;
+  @extend .uk-width-1-4;
+
+  header {
+    font-size: 16pt;
+  }
+
+  .article-text {
+    overflow: hidden;
+  }
+
+  .edit {
+    @extend .uk-icon-mixin;
+    @extend .uk-icon-edit;
+    @extend .uk-text-success;
+  }
+
+  .delete {
+    @extend .uk-icon-mixin;
+    @extend .uk-icon-trash;
+    @extend .uk-text-danger;
+  }
+}
+
+.form-row {
+  @extend .uk-form-row;
 }
