@@ -1,0 +1,11 @@
+= form_for @article, html: { class: 'uk-form' } do |f|
+  .form-row
+    = f.label :title, class: 'uk-hidden'
+    = f.text_field :title, placheholder: :title
+
+  .form-row
+    = f.label :text, class: 'uk-hidden'
+    = f.text_area :text, placeholder: "Article text"
+
+  .form-row
+    = f.submit "Save"

@@ -1,0 +1,9 @@
+<% @articles.each do |article| %>
+  <article>
+    <h2><%= article.title %></h2>
+    <p class="article-introduction article-text">
+      <%= article.text.split(' ').first(100).join(' ')+'...'%>
+      <%= link_to 'more', blog_path(article.id) %>
+    </p>
+  <article>
+<% end %>
