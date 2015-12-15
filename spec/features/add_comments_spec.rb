@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 describe 'Adding comments' do
+   before do
+     visit blog_path(article)
+   end
+
   let(:article) { create :article }
   let(:comment_attributes) { attributes_for :comment }
 
   scenario 'someone adds a comment for an article' do
-    visit blog_path(article)
 
     fill_in "Name", with: comment_attributes[:name]
     fill_in "Subject", with: comment_attributes[:subject]
@@ -21,7 +24,6 @@ describe 'Adding comments' do
   end
 
   scenario 'someone adds a comment for an article without supplying a name' do
-    visit blog_path(article)
 
     fill_in "Subject", with: comment_attributes[:subject]
     fill_in "Text", with: comment_attributes[:text]
@@ -36,7 +38,6 @@ describe 'Adding comments' do
   end
 
   scenario 'someone adds a comment for an article without supplying a subject' do
-    visit blog_path(article)
 
     fill_in "Name", with: comment_attributes[:name]
     fill_in "Text", with: comment_attributes[:text]
@@ -51,7 +52,6 @@ describe 'Adding comments' do
   end
 
   scenario 'someone adds a comment for an article without supplying comment text' do
-    visit blog_path(article)
 
     fill_in "Name", with: comment_attributes[:name]
     fill_in "Subject", with: comment_attributes[:subject]
