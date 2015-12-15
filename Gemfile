@@ -24,6 +24,7 @@ gem 'ffaker'
 gem 'thin'
 gem 'rails-uikit-sass', github: 'RadialDevGroup/rails-uikit-sass'
 gem 'slim-rails'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
